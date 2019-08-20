@@ -38,7 +38,7 @@ func TestFn(t *testing.T) {
 
 }
 
-func Sum(ops ...int) int  {
+func Sum(ops ...int) int {
 	var ret = 0
 	for _, op := range ops {
 		ret += op
@@ -46,11 +46,11 @@ func Sum(ops ...int) int  {
 	return ret
 }
 
-func Clear()  {
+func Clear() {
 	fmt.Println("Clear resources.")
 }
 
-func TestDefer(t *testing.T)  {
+func TestDefer(t *testing.T) {
 	defer Clear()
 	fmt.Println("Start")
 	panic("err")

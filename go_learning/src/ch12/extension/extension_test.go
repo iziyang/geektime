@@ -27,6 +27,7 @@ func (d *Dog) Speak() {
 	fmt.Print("Wang!")
 
 }
+
 //
 func (d *Dog) SpeakTo(host string) {
 	//d.p.SpeakTo(host)

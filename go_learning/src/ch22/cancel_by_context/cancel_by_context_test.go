@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-func isCancelled(ctx context.Context) bool  {
+func isCancelled(ctx context.Context) bool {
 	select {
 	case <-ctx.Done():
 		return true
@@ -27,13 +27,13 @@ func isCancelled(ctx context.Context) bool  {
 //
 //}
 
-func TestCancel(t *testing.T)  {
+func TestCancel(t *testing.T) {
 	//cancelChan := make(chan struct{}, 0)
 	ctx, cancel := context.WithCancel(context.Background())
 	for i := 0; i < 5; i++ {
 		go func(i int, ctx context.Context) {
 			for {
-				if isCancelled(ctx){
+				if isCancelled(ctx) {
 					break
 				}
 				time.Sleep(time.Millisecond * 5)
