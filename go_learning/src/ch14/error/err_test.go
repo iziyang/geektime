@@ -30,6 +30,7 @@ func TestGetFibonacci(t *testing.T) {
 			fmt.Println("It is less")
 		}
 		t.Error(err)
+		fmt.Println(err)
 	} else {
 		t.Log(v)
 	}

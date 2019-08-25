@@ -40,5 +40,30 @@ func TestCloseChannel(t *testing.T) {
 	dataReceiver(ch, &wg)
 	wg.Add(1)
 	dataReceiver(ch, &wg)
+
+	wg.Add(1)
+	dataReceiver(ch, &wg)
+	wg.Add(1)
+	dataReceiver(ch, &wg)
+
+	wg.Add(1)
+	dataReceiver(ch, &wg)
+	wg.Add(1)
+	dataReceiver(ch, &wg)
+
+	wg.Add(1)
+	dataReceiver(ch, &wg)
+	wg.Add(1)
+	dataReceiver(ch, &wg)
+	//多个 receiver 也只能收到 10 个数
+	wg.Add(1)
+	dataReceiver(ch, &wg)
+	wg.Add(1)
+	dataReceiver(ch, &wg)
+
+	wg.Add(1)
+	dataReceiver(ch, &wg)
+	wg.Add(1)
+	dataReceiver(ch, &wg)
 	wg.Wait()
 }

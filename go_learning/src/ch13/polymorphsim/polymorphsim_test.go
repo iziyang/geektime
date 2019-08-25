@@ -33,7 +33,7 @@ func writeFirstProgram(p Programmer) {
 }
 
 func TestPolymorphism(t *testing.T) {
-	goProg := &GoProgrammer{}
+	goProg := &GoProgrammer{}  // 指针类型
 	javaProg := new(JavaProgrammer)
 	writeFirstProgram(goProg)
 	writeFirstProgram(javaProg)

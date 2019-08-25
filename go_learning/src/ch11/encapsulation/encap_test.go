@@ -12,11 +12,11 @@ type Employee struct {
 	Age  int
 }
 
-//func (e *Employee) String() string {
-//	fmt.Printf("Address is %x\n", unsafe.Pointer(&e.Name))
-//	return fmt.Sprintf("ID:%s/Name:%s/Age:%d", e.Id, e.Name, e.Age)
-//
-//}
+func (e *Employee) String1() string {
+	fmt.Printf("Address is %x\n", unsafe.Pointer(&e.Name))
+	return fmt.Sprintf("ID:%s/Name:%s/Age:%d", e.Id, e.Name, e.Age)
+
+}
 
 func (e Employee) String() string {
 	fmt.Printf("Address is %x\n", unsafe.Pointer(&e.Name))
@@ -42,7 +42,8 @@ func TestCreateEmployeeObj(t *testing.T) {
 
 func TestStructOperations(t *testing.T) {
 	e := Employee{"0", "Bob", 20}
-	//fmt.Printf("Address is %x\n", unsafe.Pointer(&e.Name))
+	fmt.Printf("Address is %x\n", unsafe.Pointer(&e.Name))
 	t.Log(e.String())
+	t.Log(e.String1())
 
 }

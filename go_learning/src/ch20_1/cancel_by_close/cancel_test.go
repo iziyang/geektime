@@ -18,7 +18,13 @@ func isCancelled(cancelChan chan struct{}) bool {
 }
 
 func cancel_1(cancelChan chan struct{}) {
+	var p = &cancelChan
+	fmt.Println(p)
 	cancelChan <- struct{}{}
+	//cancelChan <- struct{}{}
+	//cancelChan <- struct{}{}
+	//cancelChan <- struct{}{}
+	//cancelChan <- struct{}{}
 }
 
 func cancel_2(cancelChan chan struct{}) {
@@ -27,9 +33,13 @@ func cancel_2(cancelChan chan struct{}) {
 }
 
 func TestCancel(t *testing.T) {
-	cancelChan := make(chan struct{}, 0)
+	cancelChan := make(chan struct{})
+	var p = &cancelChan
+	fmt.Println(p)
 	for i := 0; i < 5; i++ {
 		go func(i int, cancelCh chan struct{}) {
+			var p = &cancelCh
+			fmt.Println(i,p)
 			for {
 				if isCancelled(cancelCh) {
 					break
@@ -39,7 +49,7 @@ func TestCancel(t *testing.T) {
 			fmt.Println(i, "Cancelled")
 		}(i, cancelChan)
 	}
-	//cancel_2(cancelChan)
-	cancel_1(cancelChan)
+	cancel_2(cancelChan)
+	//cancel_1(cancelChan)
 	time.Sleep(time.Second * 1)
 }

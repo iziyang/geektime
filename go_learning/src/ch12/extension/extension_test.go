@@ -18,8 +18,8 @@ func (p *Pet) SpeakTo(host string) {
 }
 
 type Dog struct {
-	p *Pet
-	//Pet // 匿名类型嵌入，不支持访问子类的方法
+	//p *Pet
+	Pet // 匿名类型嵌入，不支持访问子类的方法
 }
 
 func (d *Dog) Speak() {

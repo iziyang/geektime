@@ -52,5 +52,4 @@ func TestCounterWaitGroup(t *testing.T) {
 	}
 	wg.Wait()
 	t.Logf("counter = %d", counter)
-
 }

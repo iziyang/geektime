@@ -29,7 +29,7 @@ func TestGetSingletonObj(t *testing.T) {
 		wg.Add(1)
 		go func() {
 			obj := GetSingletonObj()
-			fmt.Printf("%X\n", unsafe.Pointer(obj))
+			fmt.Printf("%X\n", unsafe.Pointer(obj)) //获取对象的地址
 			wg.Done()
 		}()
 	}

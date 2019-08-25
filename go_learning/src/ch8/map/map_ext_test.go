@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func TestMapWithFunValue(t *testing.T) {
+func TestMapWithFunValue(t *testing.T) { // 值可以是方法
 	var m = map[int]func(op int) int{}
 	m[1] = func(op int) int { return op }
 	m[2] = func(op int) int { return op * op }
